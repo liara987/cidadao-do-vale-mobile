@@ -1,0 +1,30 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-browsersync": {
+      "PACKAGE_NAME": "co.catraca.cidadaodovale"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "co.catraca.cidadaodovale"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "co.catraca.cidadaodovale"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "co.catraca.cidadaodovale"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "co.catraca.cidadaodovale"
+    },
+    "cordova-plugin-media": {
+      "PACKAGE_NAME": "co.catraca.cidadaodovale"
+    }
+  },
+  "dependent_plugins": {}
+}
