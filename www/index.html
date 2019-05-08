@@ -38,6 +38,8 @@
             img-src * 'self' data: https:;"> -->
             <!-- script-src 'self' https://www.gstatic.com/firebasejs/firebase.js 'unsafe-inline'; -->
             <!-- connect-src https://www.gstatic.com https://www.googleapis.com/ https://firestore.googleapis.com/; -->
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Language" content="pt-br">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -50,8 +52,8 @@
             <h1>Cidadão do vale</h1>
 
             <div id="deviceready" class="blink hidden">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+                <p class="event listening text-center">Conectando o dispositivo</p>
+                <p class="event received">Aparelho conectado</p>
             </div>
 
             <form id="contribuir" enctype="multipart/form-data">
@@ -82,19 +84,20 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="file" accept="image/*" name="foto">
+                    <label for="exampleFormControlFile1">Selecione o arquivo</label>
+                    <input type="file" class="form-control-file" accept="image/*" id="foto" name="foto">                    
                 </div>
 
                 <div class="form-group">
-                    <button class="btn btn-primary camera-start">Tirar Foto</button>
+                    <button class="btn btn-primary camera-start btn-block">Tirar Foto</button>
                 </div>
 
                 <div class="form-group" style="max-width: 100%">
                     <img id="myImage" class="img-responsive" style="max-width: 100%"/>
                 </div>
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
+                <div class="mt-0 form-group text-center">
+                    <button type="submit" class="btn btn-success btn-block">Salvar</button>    
                 </div>
             </form>
         </div>
