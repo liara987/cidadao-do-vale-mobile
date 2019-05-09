@@ -17,6 +17,10 @@
  * under the License.
  */
  
+ .display-4{
+    text-shadow: black 0.1em 0.1em 0.2em; 
+ }
+
  form, input, label, p {    
     text-shadow: black 0.1em 0.1em 0.2em;
     font-size: larger;
