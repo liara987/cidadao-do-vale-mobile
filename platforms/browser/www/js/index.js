@@ -67,7 +67,7 @@ var app = {
 
     onLocationSuccess: function(position) {
         $('#location').val(JSON.stringify(cloneAsObject(position)));
-        alert(
+        console.log(
             'Latitude: '          + position.coords.latitude          + '\n' +
             'Longitude: '         + position.coords.longitude         + '\n' +
             'Altitude: '          + position.coords.altitude          + '\n' +
@@ -92,16 +92,24 @@ var app = {
             this.onGetPictureFail,
             {
                 quality: 25,
-                //destinationType: Camera.DestinationType.DATA_URL
-                destinationType: Camera.DestinationType.FILE_URI
+                destinationType: Camera.DestinationType.DATA_URL
+                //destinationType: Camera.DestinationType.FILE_URI
             }
         );
     },
 
     onGetPictureSuccess: function(imageData) {
         var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;
+    },
 
-        var ref = firebase.storage().ref('/images/').child('teste.jpg');
+    onGetPictureFail: function(message) {
+        alert('Failed because: ' + message);
+    },
+
+    uploadFoto: function(imageData, fileName) {
+        imageData = imageData.replace('data:image/jpeg;base64,', '');
+        var ref = firebase.storage().ref('/images/').child(fileName);
         ref.putString(imageData, 'base64', {contentType: 'image/jpg'})
             .then(function(snapshot) {
                 alert(snapshot.ref);
@@ -111,12 +119,6 @@ var app = {
             .catch(function(error) {
                 console.error("Error adding a file: ", error);
             });
-
-        image.src = "data:image/jpeg;base64," + imageData;
-    },
-
-    onGetPictureFail: function(message) {
-        alert('Failed because: ' + message);
     },
 
     prepararSelectCategorias: function() {
@@ -149,10 +151,23 @@ var app = {
         var form = getFormData($('#contribuir'));
         form.location = JSON.parse(form.location);
 
-        db.collection('contribuicoes').add(form).then(function(snapShot) {
-            console.log(snapShot.id);
-        }).catch(function(e) {
-            console.log(e);
+        networkinterface.getIPAddress(function (ip) {
+            form.ip = ip;
+
+            db.collection('contribuicoes').add(form).then(function(snapShot) {
+                console.log(snapShot.id);
+
+                var image = document.getElementById('myImage');
+                if (image.src)
+                    app.uploadFoto(image.src, snapShot.id + '.jpg');
+
+                alert('Contribuição salva');
+
+                $('#contribuir')[0].reset();
+            }).catch(function(e) {
+                console.log(e);
+                alert(e);
+            });
         });
     }
 };

@@ -158,8 +158,13 @@ var app = {
             var image = document.getElementById('myImage');
             if (image.src)
                 app.uploadFoto(image.src, snapShot.id + '.jpg');
+
+            alert('Contribuição salva');
+
+            $('#contribuir')[0].reset();
         }).catch(function(e) {
             console.log(e);
+            alert(e);
         });
     }
 };

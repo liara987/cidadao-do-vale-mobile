@@ -151,15 +151,23 @@ var app = {
         var form = getFormData($('#contribuir'));
         form.location = JSON.parse(form.location);
 
+        networkinterface.getIPAddress(function (ip) {
+            form.ip = ip;
 
-        db.collection('contribuicoes').add(form).then(function(snapShot) {
-            console.log(snapShot.id);
+            db.collection('contribuicoes').add(form).then(function(snapShot) {
+                console.log(snapShot.id);
 
-            var image = document.getElementById('myImage');
-            if (image.src)
-                app.uploadFoto(image.src, snapShot.id + '.jpg');
-        }).catch(function(e) {
-            console.log(e);
+                var image = document.getElementById('myImage');
+                if (image.src)
+                    app.uploadFoto(image.src, snapShot.id + '.jpg');
+
+                alert('Contribuição salva');
+
+                $('#contribuir')[0].reset();
+            }).catch(function(e) {
+                console.log(e);
+                alert(e);
+            });
         });
     }
 };

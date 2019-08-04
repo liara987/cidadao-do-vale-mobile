@@ -18,6 +18,9 @@
     <feature name="Media">
         <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
     </feature>
+    <feature name="networkinterface">
+        <param name="android-package" value="com.albahra.plugin.networkinterface.networkinterface" />
+    </feature>
     <name>Cidadão do Vale</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

@@ -24,6 +24,9 @@
     },
     "cordova-plugin-media": {
       "PACKAGE_NAME": "co.catraca.cidadaodovale"
+    },
+    "cordova-plugin-networkinterface": {
+      "PACKAGE_NAME": "co.catraca.cidadaodovale"
     }
   },
   "dependent_plugins": {}

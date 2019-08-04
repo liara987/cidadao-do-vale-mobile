@@ -18,8 +18,9 @@
     under the License.
 -->
 <html>
-    <head>
-        <!--
+
+<head>
+    <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -28,79 +29,82 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *;"/>
-        <!-- <meta http-equiv="Content-Security-Policy" content="
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; img-src * data: 'unsafe-inline'; connect-src * 'unsafe-inline'; frame-src *;" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="
             default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';
             style-src 'self' 'unsafe-inline';
             script-src 'self' * 'unsafe-inline';
             connect-src *;
             media-src *;
             img-src * 'self' data: https:;"> -->
-            <!-- script-src 'self' https://www.gstatic.com/firebasejs/firebase.js 'unsafe-inline'; -->
-            <!-- connect-src https://www.gstatic.com https://www.googleapis.com/ https://firestore.googleapis.com/; -->
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+    <!-- script-src 'self' https://www.gstatic.com/firebasejs/firebase.js 'unsafe-inline'; -->
+    <!-- connect-src https://www.gstatic.com https://www.googleapis.com/ https://firestore.googleapis.com/; -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="pt-br">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Cidadão do vale</title>
+</head>
+
+<body>
+    <div class="container"> 
+        <h1 class="display-4">Cidadão do vale</h1>
+        <form id="contribuir" enctype="multipart/form-data">
+            <input type="hidden" id="location" name="location" />
+
+            <div class="form-group">
+                <label for="titulo">Título</label>
+                <input type="text" id="titulo" name="titulo" class="form-control" />
             </div>
-            <form id="contribuir" enctype="multipart/form-data">
-                <input type="hidden" id="location" name="location" />
 
-                <div class="form-group">
-                    <label for="titulo">Título</label>
-                    <input type="text" id="titulo" name="titulo" class="form-control" />
-                </div>
+            <div class="form-group">
+                <label for="categorias">Categoria</label>
+                <select id="categorias" name="categorias" class="form-control">
+                    <option>Selecione</option>
+                </select>
+            </div>
 
-                <div class="form-group">
-                    <label for="categorias">Categoria</label>
-                    <select id="categorias" name="categorias" class="form-control">
-                        <option>Selecione</option>
-                    </select>
-                </div>
+            <div class="form-group">
+                <label for="subcategorias">Tipo</label>
+                <select id="subcategorias" name="subcategorias" class="form-control">
+                    <option>Selecione</option>
+                </select>
+            </div>
 
-                <div class="form-group">
-                    <label for="subcategorias">Tipo</label>
-                    <select id="subcategorias" name="subcategorias" class="form-control">
-                        <option>Selecione</option>
-                    </select>
-                </div>
+            <div class="form-group">
+                <label for="detalhes">Detalhes</label>
+                <textarea id="detalhes" name="detalhes" class="form-control"></textarea>
+            </div>
 
-                <div class="form-group">
-                    <label for="detalhes">Detalhes</label>
-                    <textarea id="detalhes" name="detalhes" class="form-control"></textarea>
-                </div>
+            <div class="form-group text-center">
+                <label class="btn btn-primary" for="exampleFormControlFile1">
+                    <input type="file" class="form-control-file d-none" accept="image/*" id="foto" name="foto">
+                    Escolher arquivo
+                </label>
+                <button class="btn btn-primary camera-start">Tirar Foto</button>
+            </div>
 
-                <div class="form-group">
-                    <input type="file" accept="image/*" name="foto">
-                </div>
+            <div class="form-group" style="max-width: 100%">
+                <img id="myImage" class="img-responsive" style="max-width: 100%" />
+            </div>
 
-                <div class="form-group">
-                    <button class="btn btn-primary camera-start">Tirar Foto</button>
-                </div>
+            <div class="mt-0 form-group text-center">
+                <button type="submit" class="btn btn-success btn-block">Salvar</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script> -->
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
-                </div>
-
-                <div class="form-group">
-                    <img id="myImage" class="img-responsive" />
-                </div>
-            </form>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-        <!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script> -->
-        <!-- <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script> -->
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
 </html>
