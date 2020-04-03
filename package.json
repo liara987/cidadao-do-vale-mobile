@@ -33,7 +33,7 @@
     "immutable": "^4.0.0-rc.12",
     "inflight": "^1.0.6",
     "inherits": "^2.0.3",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "minimatch": "^3.0.4",
     "npm-install-all": "^1.1.21",
     "npm-install-missing": "^0.1.4",
