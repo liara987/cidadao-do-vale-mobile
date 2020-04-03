@@ -27,7 +27,35 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
+        this.receivedEvent('deviceready');              
+            var div = document.getElementById("map_canvas");
+      
+            // Create a Google Maps native view under the map_canvas div.
+            var map = plugin.google.maps.Map.getMap(div);
+      
+            // If you click the button, do something...
+            var button = document.getElementById("button");
+            button.addEventListener("click", function() {
+      
+              // Move to the position with animation
+              map.animateCamera({
+                target: {lat: 37.422359, lng: -122.084344},
+                zoom: 17,
+                tilt: 60,
+                bearing: 140,
+                duration: 5000
+              });
+      // Add a maker
+      var marker = map.addMarker({
+        position: {lat: 37.422359, lng: -122.084344},
+        title: "Welecome to \n" +
+               "Cordova GoogleMaps plugin for iOS and Android",
+        snippet: "This plugin is awesome!",
+        animation: plugin.google.maps.Animation.BOUNCE
+      });
+
+      // Show the info window
+      marker.showInfoWindow();
     },
 
     // Update DOM on a Received Event
@@ -59,14 +87,15 @@ var app = {
             app.prepararSelectCategorias();
 
             $('#contribuir').submit(function(e) {
-                e.preventDefault();
-                app.salvarContribuicao(e);
-            })
+                initMap();
+                e.preventDefault();                
+                app.salvarContribuicao(e);                                                       
+            });
         });
     },
 
     onLocationSuccess: function(position) {
-        $('#location').val(JSON.stringify(cloneAsObject(position)));
+        $('#location').val(JSON.stringify(cloneAsObject(position)));       
         console.log(
             'Latitude: '          + position.coords.latitude          + '\n' +
             'Longitude: '         + position.coords.longitude         + '\n' +
@@ -80,10 +109,7 @@ var app = {
     },
 
     onLocationError: function(error) {
-        alert(
-            'code: '    + error.code    + '\n' +
-            'message: ' + error.message + '\n'
-        );
+        swal("Erro número: " + error.code, "Mensagem: " + error.message, "warning");
     },
 
     tirarFoto: function() {
@@ -104,7 +130,9 @@ var app = {
     },
 
     onGetPictureFail: function(message) {
-        alert('Failed because: ' + message);
+        console.log(message);
+        swal("Erro", "Tire uma foto por favor.", "warning");
+        
     },
 
     uploadFoto: function(imageData, fileName) {
@@ -112,7 +140,7 @@ var app = {
         var ref = firebase.storage().ref('/images/').child(fileName);
         ref.putString(imageData, 'base64', {contentType: 'image/jpg'})
             .then(function(snapshot) {
-                alert(snapshot.ref);
+                
                 //$('');
                 console.log('Uploaded a blob or file!');
             })
@@ -149,26 +177,21 @@ var app = {
         console.log(e);
 
         var form = getFormData($('#contribuir'));
-        form.location = JSON.parse(form.location);
-
-
+        form.location = JSON.parse(form.location);        
+        
         db.collection('contribuicoes').add(form).then(function(snapShot) {
-            console.log(snapShot.id);
-
+            console.log(snapShot.id);   
+            
             var image = document.getElementById('myImage');
             if (image.src)
-                app.uploadFoto(image.src, snapShot.id + '.jpg');
-
-            alert('Contribuição salva');
-
-            $('#contribuir')[0].reset();
+                app.uploadFoto(image.src, snapShot.id + '.jpg');                     
+            swal("Salvo com sucesso", "Agradecemos sua colaboração.", "success");     
         }).catch(function(e) {
             console.log(e);
-            alert(e);
         });
+        
     }
 };
-
 
 // Initialize Firebase
 var config = {

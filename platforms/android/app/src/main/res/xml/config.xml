@@ -1,33 +1,57 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="co.catraca.cidadaodovale" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <feature name="Camera">
-        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
-    </feature>
-    <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+    <feature name="CordovaGoogleMaps">
+        <param name="android-package" value="plugin.google.maps.CordovaGoogleMaps" />
         <param name="onload" value="true" />
+        <param name="onreset" value="true" />
     </feature>
-    <feature name="Geolocation">
-        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    <feature name="PluginMap">
+        <param name="android-package" value="plugin.google.maps.PluginMap" />
     </feature>
-    <feature name="File">
-        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
-        <param name="onload" value="true" />
+    <feature name="PluginPolyline">
+        <param name="android-package" value="plugin.google.maps.PluginPolyline" />
     </feature>
-    <allow-navigation href="cdvfile:*" />
-    <feature name="Media">
-        <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
+    <feature name="PluginPolygon">
+        <param name="android-package" value="plugin.google.maps.PluginPolygon" />
     </feature>
-    <feature name="networkinterface">
-        <param name="android-package" value="com.albahra.plugin.networkinterface.networkinterface" />
+    <feature name="PluginMarker">
+        <param name="android-package" value="plugin.google.maps.PluginMarker" />
+    </feature>
+    <feature name="PluginCircle">
+        <param name="android-package" value="plugin.google.maps.PluginCircle" />
+    </feature>
+    <feature name="PluginTileOverlay">
+        <param name="android-package" value="plugin.google.maps.PluginTileOverlay" />
+    </feature>
+    <feature name="PluginGroundOverlay">
+        <param name="android-package" value="plugin.google.maps.PluginGroundOverlay" />
+    </feature>
+    <feature name="PluginKmlOverlay">
+        <param name="android-package" value="plugin.google.maps.PluginKmlOverlay" />
+    </feature>
+    <feature name="PluginGeocoder">
+        <param name="android-package" value="plugin.google.maps.PluginGeocoder" />
+    </feature>
+    <feature name="PluginLocationService">
+        <param name="android-package" value="plugin.google.maps.PluginLocationService" />
+    </feature>
+    <feature name="PluginEnvironment">
+        <param name="android-package" value="plugin.google.maps.PluginEnvironment" />
+    </feature>
+    <feature name="PluginMarkerCluster">
+        <param name="android-package" value="plugin.google.maps.PluginMarkerCluster" />
+    </feature>
+    <feature name="PluginStreetViewPanorama">
+        <param name="android-package" value="plugin.google.maps.PluginStreetViewPanorama" />
     </feature>
     <name>Cidadão do Vale</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Um aplicativo para coletar informações voluntárias a respeito de problemas urbanos na cidade de Almenara.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="987.liara@gmail.com" href="http://gmail.com">
+        Liara Pereira Duarte
     </author>
+    <icon density="mdpi" height="57" platform="android" src="res/icon/android/icon.png" width="57" />
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -50,4 +74,8 @@
     </edit-config>
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="xwalkZOrderOnTop" value="true" />
+    <preference name="BackgroundColor" value="0" />
+    <preference name="android-minSdkVersion" value="19" />
+    <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyDY2MWi3FNzklnCcsVPFVEHrRfE87OZYuI" />
 </widget>

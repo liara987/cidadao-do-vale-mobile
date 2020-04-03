@@ -4,8 +4,14 @@
   "name": "Cidadão do Vale",
   "short_name": "Cidadão do Vale",
   "version": "co.catraca.cidadaodovale",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
-  "author": "Apache Cordova Team",
-  "icons": [],
+  "description": "Um aplicativo para coletar informações voluntárias a respeito de problemas urbanos na cidade de Almenara.",
+  "author": "Liara Pereira Duarte",
+  "icons": [
+    {
+      "src": "res/icon/android/icon.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    }
+  ],
   "start_url": "index.html"
 }

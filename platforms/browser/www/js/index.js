@@ -27,7 +27,7 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
+        this.receivedEvent('deviceready');      
     },
 
     // Update DOM on a Received Event
@@ -58,15 +58,15 @@ var app = {
 
             app.prepararSelectCategorias();
 
-            $('#contribuir').submit(function(e) {
-                e.preventDefault();
-                app.salvarContribuicao(e);
-            })
+            $('#contribuir').submit(function(e) {                
+                e.preventDefault();                
+                app.salvarContribuicao(e);                                                       
+            });
         });
     },
 
     onLocationSuccess: function(position) {
-        $('#location').val(JSON.stringify(cloneAsObject(position)));
+        $('#location').val(JSON.stringify(cloneAsObject(position)));       
         console.log(
             'Latitude: '          + position.coords.latitude          + '\n' +
             'Longitude: '         + position.coords.longitude         + '\n' +
@@ -80,10 +80,7 @@ var app = {
     },
 
     onLocationError: function(error) {
-        alert(
-            'code: '    + error.code    + '\n' +
-            'message: ' + error.message + '\n'
-        );
+        swal("Erro número: " + error.code, "Mensagem: " + error.message, "warning");
     },
 
     tirarFoto: function() {
@@ -104,7 +101,9 @@ var app = {
     },
 
     onGetPictureFail: function(message) {
-        alert('Failed because: ' + message);
+        console.log(message);
+        swal("Erro", "Tire uma foto por favor.", "warning");
+        
     },
 
     uploadFoto: function(imageData, fileName) {
@@ -112,7 +111,7 @@ var app = {
         var ref = firebase.storage().ref('/images/').child(fileName);
         ref.putString(imageData, 'base64', {contentType: 'image/jpg'})
             .then(function(snapshot) {
-                alert(snapshot.ref);
+                
                 //$('');
                 console.log('Uploaded a blob or file!');
             })
@@ -149,29 +148,21 @@ var app = {
         console.log(e);
 
         var form = getFormData($('#contribuir'));
-        form.location = JSON.parse(form.location);
-
-        networkinterface.getIPAddress(function (ip) {
-            form.ip = ip;
-
-            db.collection('contribuicoes').add(form).then(function(snapShot) {
-                console.log(snapShot.id);
-
-                var image = document.getElementById('myImage');
-                if (image.src)
-                    app.uploadFoto(image.src, snapShot.id + '.jpg');
-
-                alert('Contribuição salva');
-
-                $('#contribuir')[0].reset();
-            }).catch(function(e) {
-                console.log(e);
-                alert(e);
-            });
+        form.location = JSON.parse(form.location);        
+        
+        db.collection('contribuicoes').add(form).then(function(snapShot) {
+            console.log(snapShot.id);   
+            
+            var image = document.getElementById('myImage');
+            if (image.src)
+                app.uploadFoto(image.src, snapShot.id + '.jpg');                     
+            swal("Salvo com sucesso", "Agradecemos sua colaboração.", "success");     
+        }).catch(function(e) {
+            console.log(e);
         });
+        
     }
 };
-
 
 // Initialize Firebase
 var config = {

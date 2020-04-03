@@ -1,0 +1,16 @@
+@import url(bootstrap.min.css);
+@import url(bootstrap-theme.css);
+
+body {
+margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
+background-color:#27A844;
+}
+
+.jumbotron{
+    color: white;
+    background-color:#27A844;
+}
+
+.btn{
+    background-color: #195128;
+}

@@ -90,6 +90,8 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
+apply from: "../cordova-plugin-googlemaps/cidadaodovale-tbxml-android.gradle"
+apply from: "../cordova-plugin-googlemaps/cidadaodovale-apikey.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras1 = file('build-extras.gradle').exists()
@@ -266,7 +268,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
-    implementation "com.android.support:support-v4:24.1.1+"
+    implementation "com.google.android.gms:play-services-maps:15.0.1"
+    implementation "com.google.android.gms:play-services-location:15.0.1"
+    implementation "com.android.support:support-core-utils:27.+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

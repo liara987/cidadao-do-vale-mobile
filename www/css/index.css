@@ -16,40 +16,19 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- 
- .btn-success{
-     background-color: #2e7d32;
- }
-
- .display-4{
-    text-shadow: black 0.1em 0.1em 0.2em; 
- }
-
- form, input, label, p {    
-    text-shadow: black 0.1em 0.1em 0.2em;
-    font-size: larger;
-}
-
- .form-control:focus {
-    border-color: green;
-    box-shadow: inset 0 1px 1px rgba(26, 75, 24, 0.075), 0 0 8px rgba(0, 255, 0, 0.6);
-  }
-
- .btn-primary{
-     background: #003300;
-     border: none;
- }
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
     color: white;
 }
+
+
 
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     /*background-color:#E4E4E4;*/
-    background-color:#66bb6a;
+    background-color:#27A844;
     /*background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);*/
     /*background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);*/
     /*background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);*/
@@ -63,7 +42,6 @@ body {
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
-    font-weight: bold;
     height:100%;
     margin:0px;
     padding:0px;
@@ -139,3 +117,42 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.btn{
+    background-color: #195128;
+    border: none;
+}
+
+.btn:hover{
+    background-color: #054a00;
+}
+
+a { color: inherit; } 
+
+a:link {
+    color: white;
+ }
+ 
+ /* mouse over */
+ a:hover {
+     color: white;
+ }
+ 
+ /* link selecionado */
+ a:active {
+     color: white;
+ }
+
+ .map-container-5{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+    .map-container-5 iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }

@@ -10,22 +10,9 @@
     "cordova-plugin-browsersync": {
       "PACKAGE_NAME": "co.catraca.cidadaodovale"
     },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "co.catraca.cidadaodovale"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "co.catraca.cidadaodovale"
-    },
-    "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "co.catraca.cidadaodovale"
-    },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "co.catraca.cidadaodovale"
-    },
-    "cordova-plugin-media": {
-      "PACKAGE_NAME": "co.catraca.cidadaodovale"
-    },
-    "cordova-plugin-networkinterface": {
+    "cordova-plugin-googlemaps": {
+      "PLAY_SERVICES_VERSION": "15.0.1",
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "co.catraca.cidadaodovale"
     }
   },
