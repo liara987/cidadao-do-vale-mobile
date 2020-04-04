@@ -164,14 +164,14 @@ var app = {
     }
 };
 
-// Initialize Firebase
+// Initialize Firebase adicione os dados da sua aplicação
 var config = {
-    apiKey: "AIzaSyDeU3iXSkN5zMvk4y14V-Tp3dnv-hPXsw8",
-    authDomain: "cidadaodovale-e920b.firebaseapp.com",
-    databaseURL: "https://cidadaodovale-e920b.firebaseio.com",
-    projectId: "cidadaodovale-e920b",
-    storageBucket: "cidadaodovale-e920b.appspot.com",
-    messagingSenderId: "927504849509"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
 };
 firebase.initializeApp(config);
 
