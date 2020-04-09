@@ -1,23 +1,30 @@
 <h1>Cidadão do Vale Mobile</h1>
 
+<h2>Resumo</h2>
+
 Este projeto de pesquisa prevê a continuidade do desenvolvimento da plataforma web Cidadão do Vale e sua implementação em aplicativo para dispositivo móvel. A plataforma Cidadão do Vale é uma configuração do framework ClickOnMap implementada em 2017 no IFNMG-Almenara em parceria com a Prefeitura Municipal, que permite a informação em tempo real sobre a existência e localização de problemas relacionados à infraestrutura urbana por aplicação de técnicas de Informação Geográfica Voluntária (VGI). O aplicativo foi desenvolvido para plataforma Android com uso das tecnologias HTML, CSS, JavaScript, Cordova e Firebase.
 
-//instale node
+<h2>Tela inicial</h2>
+![Tela inicial](inicial.png)
 
-https://nodejs.org/en/
+<h2>Como Usar</h2>
 
-//instale o cordova
+1.Instale node
+
+[Node.Js](https://nodejs.org/en/)
+
+2.Instale o cordova
 
 **npm install -g cordova**
 
-//instale os modulos do projeto
+3.Instale os modulos do projeto
 
 **npm install**
 
-//rodar no navegador
+4.Rodar no navegador
 
 **cordova run browser**
 
-//rodar no android
+5.Rodar no android
 
 **cordova run android**
