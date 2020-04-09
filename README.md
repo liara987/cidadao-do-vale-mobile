@@ -7,13 +7,13 @@
 https://nodejs.org/en/
 
 //instale o cordova
-*npm install -g cordova*
+**npm install -g cordova**
 
 //instale o modulos do projeto
-*npm install*
+**npm install**
 
 //rodar no navegador
-*cordova run browser*
+**cordova run browser**
 
 //rodar no android
-*cordova run android*
+**cordova run android**
