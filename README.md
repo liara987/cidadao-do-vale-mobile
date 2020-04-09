@@ -21,10 +21,12 @@ https://user-images.githubusercontent.com/12224963/78866161-43494a80-7a15-11ea-9
 
 **npm install**
 
-4.Rodar no navegador
+4.Preencha suas informações do firebase em **www/js/index.js**
+
+5.Rodar no navegador
 
 **cordova run browser**
 
-5.Rodar no android
+6.Rodar no android
 
 **cordova run android**
