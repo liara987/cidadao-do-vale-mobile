@@ -38,7 +38,7 @@
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "minimatch": "^3.0.4",
-    "npm": "^6.14.4",
+    "npm": "^6.14.6",
     "npm-install-missing": "^0.1.4",
     "path-is-absolute": "^2.0.0",
     "popper.js": "^1.16.1",
