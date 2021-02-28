@@ -6,33 +6,33 @@ Este projeto de pesquisa prevê a continuidade do desenvolvimento da plataforma 
 <img align="center" height="300" width="400" src="https://user-images.githubusercontent.com/12224963/78866161-43494a80-7a15-11ea-9aa1-410b5ed9978f.png">
 
 ## Como Usar
-- `Passo 1` - Instale o [Node.Js](https://nodejs.org/en/)
+### `Passo 1` - Instale o [Node.Js](https://nodejs.org/en/)
 
-- `Passo 2` - Instale o [Cordova](https://cordova.apache.org/)
+### `Passo 2` - Instale o [Cordova](https://cordova.apache.org/)
 ```bash
 npm install -g cordova
 ```
 
-- `Passo 3` - Instale as dependencias do projeto
+### `Passo 3` - Instale as dependencias do projeto
 ```bash
 npm i
 #ou
 npm install
 ```
 
-- `Passo 4` - Preencha suas informações do firebase em `www/js/index.js`
+### `Passo 4` - Preencha suas informações do firebase em `www/js/index.js`
 ```bash
 npm i
 #ou
 npm install
 ```
 
-- `Passo 5` - Rodar no navegador
+### `Passo 5` - Rodar no navegador
 ```bash
 cordova run browser
 ```
 
-- `Passo 6` - Rodar no androidr
+### `Passo 6` - Rodar no androidr
 ```bash
 cordova run android
 ```
