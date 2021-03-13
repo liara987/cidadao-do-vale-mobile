@@ -53,7 +53,7 @@
     "socket.io": "^2.3.0",
     "ua-parser-js": "^0.7.21",
     "xmlbuilder": "^15.1.0",
-    "xmldom": "^0.3.0",
+    "xmldom": "^0.5.0",
     "bluebird": "^3.3.1",
     "handlebars": "^4.0.5",
     "line-reader": "^0.3.0",
