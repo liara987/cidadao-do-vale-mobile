@@ -51,7 +51,7 @@
     "server-destroy": "^1.0.1",
     "shelljs": "^0.8.3",
     "socket.io": "^2.3.0",
-    "ua-parser-js": "^0.7.21",
+    "ua-parser-js": "^0.7.24",
     "xmlbuilder": "^15.1.0",
     "xmldom": "^0.3.0",
     "bluebird": "^3.3.1",
