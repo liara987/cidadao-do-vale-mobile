@@ -55,7 +55,7 @@
     "xmlbuilder": "^15.1.0",
     "xmldom": "^0.3.0",
     "bluebird": "^3.3.1",
-    "handlebars": "^4.0.5",
+    "handlebars": "^4.7.7",
     "line-reader": "^0.3.0",
     "node-dir": "^0.1.12"
   },
